@@ -1,0 +1,1 @@
+# MyCompany.RazorCart.Integration
