@@ -20,7 +20,16 @@ namespace MyCompany.RazorCart.Integration
         /// <returns>A <see cref="RazorCart.Core.ActionPipeline.PipelineAction[]"/></returns>
         protected override PipelineAction[] ListCalculatorPipelineActions()
         {
-            return base.ListCalculatorPipelineActions();
+            return new PipelineAction[]
+            {
+                new CalculateSubTotal(),
+                new CalculateOrderDiscount(),
+                new CalculateCouponDiscount(),
+                new CalculateShipping(),
+                new CalculateHandling(),
+                new MyCalculateTax(),
+                new CalculateFinal()
+            };
         }
 
         /// <summary>
